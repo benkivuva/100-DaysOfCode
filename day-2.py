@@ -52,3 +52,18 @@ class Customer:
     def __str__(self):
         """Return a string representation of the customer."""
         return f"Name: {self.name}\nAccount Number: {self.account_number}\nAccount Balance: {self.account_balance}$"
+class Transaction:
+    """A class representing a bank transaction."""
+    
+    def __init__(self, transaction_type, amount, customer):
+        """Initialize the transaction with a type, amount, and customer."""
+        self.transaction_type = transaction_type
+        self.amount = amount
+        self.customer = customer
+    
+    def process_transaction(self):
+        """Process the transaction and update the customer's account balance."""
+        if self.transaction_type == "deposit":
+            self.customer.deposit(self.amount)
+        elif self.transaction_type == "withdrawal":
+            self.customer.withdraw(self.amount)
