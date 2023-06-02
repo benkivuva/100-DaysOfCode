@@ -23,3 +23,32 @@ class Bank:
             for customer in self.customers:
                 print(customer)
                 print("---------")
+class Customer:
+    """A class representing a bank customer."""
+    
+    def __init__(self, name, account_number, account_balance=0):
+        """Initialize the customer with a name, account number, and account balance."""
+        self.name = name
+        self.account_number = account_number
+        self.account_balance = account_balance
+    
+    def deposit(self, amount):
+        """Deposit money into the customer's account."""
+        self.account_balance += amount
+        print(f"Deposited {amount}$ into the account. New balance: {self.account_balance}$")
+    
+    def withdraw(self, amount):
+        """Withdraw money from the customer's account."""
+        if self.account_balance >= amount:
+            self.account_balance -= amount
+            print(f"Withdrew {amount}$ from the account. New balance: {self.account_balance}$")
+        else:
+            print("Insufficient funds.")
+    
+    def display_balance(self):
+        """Display the customer's account balance."""
+        print(f"Account balance: {self.account_balance}$")
+    
+    def __str__(self):
+        """Return a string representation of the customer."""
+        return f"Name: {self.name}\nAccount Number: {self.account_number}\nAccount Balance: {self.account_balance}$"
