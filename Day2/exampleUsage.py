@@ -23,7 +23,6 @@ class Bank:
             for customer in self.customers:
                 print(customer)
                 print("---------")
-    
 class Customer:
     """A class representing a bank customer."""
     
@@ -53,7 +52,6 @@ class Customer:
     def __str__(self):
         """Return a string representation of the customer."""
         return f"Name: {self.name}\nAccount Number: {self.account_number}\nAccount Balance: {self.account_balance}$"
-
 class Transaction:
     """A class representing a bank transaction."""
     
@@ -69,3 +67,4 @@ class Transaction:
             self.customer.deposit(self.amount)
         elif self.transaction_type == "withdrawal":
             self.customer.withdraw(self.amount)
+            
